@@ -1,0 +1,51 @@
+<!--
+@group MID Polymer Components
+
+TODO:element 作用描述
+
+Example:
+
+    //TODO:使用说明
+    <mt-button icon="favorite"></mt-button>
+
+Styling
+-------
+
+TODO:样式描述
+
+Accessibility
+-------------
+
+TODO:其他评价
+
+@element <%= elementName %>
+@extends mt-element
+@homepage github.mid
+-->
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="<%= elementName %>" attributes="">
+  <template><% if (!externalStyle) { %>
+    <style>
+      :host {
+        display: block;
+      }
+    </style><% } else { %>
+    <link rel="stylesheet" href="<%= elementName %>.css"><% } %>
+  </template>
+    <% if (externalJs) { %>
+    <script src="<%= elementName %>.js"></script>
+    <% } else { %>
+    <script>
+        (function () {
+
+            Polymer('<%= elementName %>',{
+                // define element prototype here
+            });
+
+        })();
+    </script>
+    <% } %>
+
+
+</polymer-element>
